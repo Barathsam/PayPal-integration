@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const express = require("express")
 const app = express()
+const cors= require("cors")
 app.use(cors())
 app.set("view engine", "ejs")
 app.use(express.static("public"))
@@ -73,4 +74,4 @@ app.post("/create-order", async (req, res) => {
   }
 })
 
-app.listen('https://paypal-donation-collector.herokuapp.com/')
+app.listen(process.env.PORT)
